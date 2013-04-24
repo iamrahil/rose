@@ -1,0 +1,164 @@
+<HTML>
+	<head>
+		<title>WindRose</title>
+		<style type="text/css">
+			.columns1,.columns {
+				line-height: 20px; !important
+			}
+			#input_div {
+				height: 20px;
+			}
+			.columns{
+				width:100px;
+				text-align: center;
+				float: left;
+			}
+			.columns label{
+				display: block;
+			}
+			.columns1 {
+				padding-right: 10px;
+				float: left;
+				width: 100px;
+				text-align: center;
+			}
+			.columns1 input {
+				width: 50px;
+				display: block;
+				text-align: center;
+				padding: 0px;
+				margin: auto;
+			}
+			.columns1 label{
+				//display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="head">
+			<h2>For Best Result, Use Google Chrome or Firefox</h2>
+		</div>
+		<div id="input_div">
+			<input type="submit" value="ADD ANOTHER WIND SPEED" onclick="addWind();"/>
+			<form name="headers" class="columns">
+				<h3>Sector</h3>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<label>N</label>
+				<label>NNE</label>
+				<label>NE</label>
+				<label>ENE</label>
+				<label>E</label>
+				<label>ESE</label>
+				<label>SE</label>
+				<label>SSE</label>
+				<label>S</label>
+				<label>SSW</label>
+				<label>SW</label>
+				<label>WSW</label>
+				<label>W</label>
+				<label>WNW</label>
+				<label>NW</label>
+				<label>NNW</label>
+			</form>
+			
+			<form name="headers" class="columns">
+				<h3>True Azimuth</h3>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<label>0.0</label>
+				<label>22.5</label>
+				<label>45.0</label>
+				<label>67.5</label>
+				<label>90.0</label>
+				<label>112.5</label>
+				<label>135.0</label>
+				<label>157.5</label>
+				<label>180.0</label>
+				<label>202.5</label>
+				<label>225.0</label>
+				<label>247.5</label>
+				<label>270.0</label>
+				<label>292.5</label>
+				<label>315.0</label>
+				<label>337.5</label>
+			</form>
+			<form name="data1" class="columns1">
+				<h3>Wind Speed Range(mi/h)</h3>
+				<label>From:</label>
+				<input name="least" type="number"/>
+				<label>To:&nbsp; </label>
+				<input name="most" type="number"/>
+				<h3>% of time</h3>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+
+			</form>
+			<form name="data2" class="columns1">
+				<h3>Wind Speed Range(mi/h)</h3>
+				<label>From:</label>
+				<input name="least" type="number"/>
+				<label>To:&nbsp; </label>
+				<input name="most" type="number"/>
+				<h3>% of time</h3>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+				<input name="speeds" type="text"/>
+
+			</form>
+		</div>
+		<div id="solid" style="clear:left;">
+			<label>Cross-Wind</label><input type="number" id="crowssWindInput"/>
+		</div>
+		<div id="rsa" style="clear:both;">
+			<form name="input" onsubmit="return false;">
+				<input type="submit" onclick="process();drawRose();drawWind();drawLabels();" value="Draw Rose"/>
+				<label>Set Precision (degrees)</label>
+				<input type="number" name="precision" value="10" onchange="warn(this.value);"/>
+				<input type="submit" onclick="startblow(document.forms['input']['precision'].value);">
+			</form>
+		</div>
+		<canvas id="myCanvas" width="600" height="600" style="border:2px solid black;"></canvas>
+		<div id="output"></div>
+
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</HTML>
